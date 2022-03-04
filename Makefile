@@ -7,7 +7,7 @@ db:
 	docker compose up -d
 
 docker-run:
-	docker container run -d --rm --network auto-invest-spring_service-network -p 8080:8080 --name ${target} ${target}
+	docker container run --restart always -d --network auto-invest-spring_service-network -p 8080:8080 --name ${target} ${target}
 
 docker-stop:
 	docker stop ${target}
